@@ -1,84 +1,91 @@
 {
-  "question-list": [
+  "questionsList": [
     {
       "id": 1,
-      "question": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
-      "answerA": {
-        "text": "Dont dare to interrupt them",
-        "value": 0
-      },
-      "answerB": {
-        "text": "Think it’s more important to give them some of your time; work can wait",
-        "value": 1
-      },
-      "answerC": {
-        "text": "Listen, but with only with half an ear",
-        "value": 2
-      },
-      "answerD": {
-        "text": "Interrupt and explain that you are really busy at the moment",
-        "value": 3
-      }
+      "question": "Youre really busy at work and a colleague is telling you their life story and personal woes. You:",
+      "answers": [
+        { "text": "Dont dare to interrupt them",
+          "value": 0
+        },
+        {
+          "text": "Think its more important to give them some of your time; work can wait",
+          "value": 1
+        },
+        {
+          "text": "Listen, but with only with half an ear",
+          "value": 2
+        },
+        {
+          "text": "Interrupt and explain that you are really busy at the moment",
+          "value": 3
+        }
+      ]
     },
     {
       "id": 2,
-      "question": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
-      "answerA": {
-        "text": "Look at your watch every two minutes",
-        "value": 0
-      },
-      "answerB": {
-        "text": "Bubble with inner anger, but keep quiet",
-        "value": 1
-      },
-      "answerC": {
-        "text": "Explain to other equally impatient people in the room that the doctor is always running late",
-        "value": 2
-      },
-      "answerD": {
-        "text": "Complain in a loud voice, while tapping your foot impatiently",
-        "value": 3
-      }
+      "question": "Youve been sitting in the doctors waiting room for more than 25 minutes. You:",
+      "answers": [
+        {
+          "text": "Look at your watch every two minutes",
+          "value": 0
+        },
+        {
+          "text": "Bubble with inner anger, but keep quiet",
+          "value": 1
+        },
+        {
+          "text": "Explain to other equally impatient people in the room that the doctor is always running late",
+          "value": 2
+        },
+        {
+          "text": "Complain in a loud voice, while tapping your foot impatiently",
+          "value": 3
+        }
+      ]
     },
     {
       "id": 3,
-      "question": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
-      "answerA": {
-        "text": "Don’t dare contradict them",
-        "value": 0
-      },
-      "answerB": {
-        "text": "Think that they are obviously right",
-        "value": 1
-      },
-      "answerC": {
-        "text": "Defend your own point of view, tooth and nail",
-        "value": 2
-      },
-      "answerD": {
-        "text": "Continuously interrupt your colleague",
-        "value": 3
-      }
+      "question": "Youre having an animated discussion with a colleague regarding a project that youre in charge of. You:",
+      "answers": [
+        {
+          "text": "Dont dare contradict them",
+          "value": 0
+        },
+         {
+          "text": "Think that they are obviously right",
+          "value": 1
+        },
+         {
+          "text": "Defend your own point of view, tooth and nail",
+          "value": 2
+        },
+         {
+          "text": "Continuously interrupt your colleague",
+          "value": 3
+        }
+      ]
     },
     {
       "id": 4,
       "question": "You are taking part in a guided tour of a museum. You:",
-      "answerA": {
-        "text": "Are a bit too far towards the back so don’t really hear what the guide is saying",
-        "value": 0
-      },
-      "answerB": {
-        "text": "Follow the group without question",
-        "value": 1
-      },
-      "answerC": {
-        "text": "Make sure that everyone is able to hear properly",
-        "value": 2
-      },
-      "answerD": {
-        "text": "Are right up the front, adding your own comments in a loud voice",
-        "value": 3
-      }
-    },
+      "answers": [
+        {
+          "text": "Are a bit too far towards the back so dont really hear what the guide is saying",
+          "value": 0
+        },
+        {
+          "text": "Follow the group without question",
+          "value": 1
+        },
+        {
+          "text": "Make sure that everyone is able to hear properly",
+          "value": 2
+        },
+        {
+          "text": "Are right up the front, adding your own comments in a loud voice",
+          "value": 3
+        }
+      ]
+    }
   ]
 }
