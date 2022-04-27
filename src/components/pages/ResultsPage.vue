@@ -21,10 +21,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['values']),
-    totalValue () {
-      return this.values.reduce((a, b) => a + b)
-    }
+    ...mapGetters(['values'])
   },
   methods: {
     ...mapActions(['clearValues']),
