@@ -13,7 +13,7 @@
 
 <script>
 import FormMultipleRadio from '@/components/atoms/FormMultipleRadio.vue'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -33,7 +33,6 @@ export default {
     ...mapGetters(['values'])
   },
   methods: {
-    ...mapMutations(['setValues']),
     selectedValue (val) {
       this.$emit('input', val)
     }
