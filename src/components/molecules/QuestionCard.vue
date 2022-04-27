@@ -1,16 +1,24 @@
 <template>
   <div class="question-card">
     <h4 class="label">{{ question }}</h4>
-    <FormMultipleRadio :value="values" :options="answers" @input="setValues" class="radio"/>
+    <FormMultipleRadio
+      :value="values"
+      :options="answers"
+      @input="selectedValue"
+      class="radio"
+      rules="required"
+    />
   </div>
 </template>
 
 <script>
 import FormMultipleRadio from '@/components/atoms/FormMultipleRadio.vue'
 import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   components: {
     FormMultipleRadio
+
   },
   props: {
     question: {
@@ -26,7 +34,10 @@ export default {
     ...mapGetters(['values'])
   },
   methods: {
-    ...mapMutations(['setValues'])
+    ...mapMutations(['setValues']),
+    selectedValue (val) {
+      this.$emit('input', val)
+    }
   }
 }
 </script>

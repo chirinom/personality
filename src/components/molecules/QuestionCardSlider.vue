@@ -1,48 +1,54 @@
 <template>
-  <div class="wrapper">
-    <transition-group class="transition">
-      <div
-        v-for="(question, index) in questions"
-        :key="index"
-        class="slider"
-      >
-        <QuestionCard
-          v-if="index + 1 == active"
-          :question="question.question"
-          :answers="question.answers"
-        />
+  <ValidationObserver v-slot="{passed}">
+    <div class="wrapper">
+      <transition-group class="transition">
+        <div
+          v-for="(question, index) in questions"
+          :key="index"
+          class="slider"
+        >
+          <QuestionCard
+            v-if="index + 1 == active"
+            :question="question.question"
+            :answers="question.answers"
+            @input="selectedValue"
+          />
+        </div>
+      </transition-group>
+      <div class="btns">
+        <button v-if="firstQuestion" class="btn back" @click="goBackHome">
+          Go back Home
+        </button>
+        <button v-else class="btn prev" @click="prev">
+          Previous
+        </button>
+        <button  v-if="lastQuestion" class="btn next" @click="next" :disabled="!passed">
+          Next question
+        </button>
+        <button v-else class="btn finish" @click="goToResults" >
+          Finish
+        </button>
       </div>
-    </transition-group>
-    <div class="btns">
-      <button  v-if="firstQuestion" class="btn back" @click="goBackHome">
-        Go back Home
-      </button>
-      <button v-else class="btn prev" @click="move(-1)">
-        Previous
-      </button>
-      <button  v-if="lastQuestion" class="btn next" @click="move(1)" >
-        Next question
-      </button>
-      <button v-else class="btn finish" @click="goToResults" >
-        Finish
-      </button>
     </div>
-  </div>
+  </ValidationObserver>
 </template>
 
 <script>
 import QuestionCard from '@/components/molecules/QuestionCard.vue'
+import { ValidationObserver } from 'vee-validate'
 
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 export default {
   name: 'PersonalityTest',
   components: {
-    QuestionCard
+    QuestionCard,
+    ValidationObserver
   },
   data () {
     return {
       active: 1,
-      slides: 4
+      slides: 4,
+      answerValue: null
     }
   },
   computed: {
@@ -56,11 +62,20 @@ export default {
   },
   methods: {
     ...mapActions(['clearValues']),
-    move (amount) {
+    ...mapMutations(['setValues']),
+    prev () {
       let newActive
-      const newIndex = this.active + amount
-      if (newIndex > this.slides) newActive = 1
+      const newIndex = this.active - 1
       this.active = newActive || newIndex
+      this.values.splice(-1)
+    },
+    next () {
+      let newActive
+      const newIndex = this.active + 1
+      if (newIndex > this.slides) newActive = 1
+      if (this.answerValue != null) this.setValues(this.answerValue)
+      this.active = newActive || newIndex
+      this.answerValue = null
     },
     goBackHome () {
       this.clearValues()
@@ -68,6 +83,9 @@ export default {
     },
     goToResults () {
       this.$router.push('/results')
+    },
+    selectedValue (val) {
+      this.answerValue = val
     }
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <ValidationProvider :rules="rules">
   <div class="multiple-radio-container">
     <span v-if="title" id="form-multiple-title">{{
       title
@@ -23,12 +24,23 @@
       </div>
     </div>
   </div>
+  </ValidationProvider>
 </template>
 
 <script>
+import { ValidationProvider, extend } from 'vee-validate'
+import { required } from 'vee-validate/dist/rules'
+
+extend('required', {
+  ...required,
+  message: 'This field is mandatory'
+})
+
 export default {
   name: 'FormMultipleRadio',
-  components: {},
+  components: {
+    ValidationProvider
+  },
   props: {
     title: {
       type: String
@@ -40,6 +52,10 @@ export default {
     },
     value: {
       type: [Number, String, Boolean, Array]
+    },
+    rules: {
+      type: [Object, String],
+      default: ''
     }
   },
   computed: {
