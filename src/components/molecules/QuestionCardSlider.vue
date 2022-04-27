@@ -32,7 +32,7 @@
           @click="next"
           class="btn next"
         >
-          Next question
+          Next
         </button>
         <button
           v-else
@@ -112,7 +112,7 @@ export default {
 
   & .slider {
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
 
   & .btns {
