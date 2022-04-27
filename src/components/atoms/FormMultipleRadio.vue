@@ -29,8 +29,9 @@
 
 <script>
 import { ValidationProvider, extend } from 'vee-validate'
-import { required } from 'vee-validate/dist/rules'
-extend('required', { ...required })
+import { required } from 'vee-validate/dist/rules.umd.js'
+
+extend('required', required)
 
 export default {
   name: 'FormMultipleRadio',
