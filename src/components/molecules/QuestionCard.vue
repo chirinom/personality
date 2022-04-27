@@ -18,7 +18,6 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   components: {
     FormMultipleRadio
-
   },
   props: {
     question: {
