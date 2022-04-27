@@ -78,15 +78,13 @@ export default {
     ...mapActions(['clearValues']),
     ...mapMutations(['setValues']),
     prev () {
-      let newActive
       const newIndex = this.active - 1
-      this.active = newActive || newIndex
+      this.active = newIndex
       this.values.splice(-1)
     },
     next () {
-      let newActive
       const newIndex = this.active + 1
-      this.active = newActive || newIndex
+      this.active = newIndex
       if (this.answerValue != null) this.setValues(this.answerValue)
       this.answerValue = null
     },
