@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import QuestionCardSlider from '@/components/QuestionCardSlider.vue'
+import QuestionCardSlider from '@/components/molecules/QuestionCardSlider.vue'
 import { mapActions } from 'vuex'
 
 export default {
@@ -19,6 +19,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-</style>

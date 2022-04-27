@@ -17,13 +17,17 @@ const actions = {
     } catch (e) {
       console.error(e)
     }
+  },
+  clearValues ({ commit }) {
+    commit('setClearValues')
   }
 }
 const mutations = {
   setQuestions: (state, data) => (state.questions = data),
   setValues: (state, data) => {
     state.values.push(data)
-  }
+  },
+  setClearValues: (state) => (state.values = [])
 }
 
 export default {

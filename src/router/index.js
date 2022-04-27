@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import PersonalityTest from '@/components/PersonalityTest.vue'
-import LandingPage from '@/components/LandingPage.vue'
+import PersonalityTest from '@/components/pages/PersonalityTest.vue'
+import LandingPage from '@/components/pages/LandingPage.vue'
+import ResultsPage from '@/components/pages/ResultsPage.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/test',
     name: 'test',
     component: PersonalityTest
+  },
+  {
+    path: '/results',
+    name: 'results',
+    component: ResultsPage
   }
 ]
 

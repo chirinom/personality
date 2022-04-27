@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!displayResult"  class="wrapper">
+  <div  class="wrapper">
     <transition-group class="transition">
       <div
         v-for="(question, index) in questions"
@@ -20,31 +20,29 @@
       <button v-else class="btn prev" @click="move(-1)">
         Previous
       </button>
-      <button class="btn next" @click="move(1)" >
-        <span v-if="lastQuestion">Next question</span>
-        <span v-else>Finish</span>
+      <button  v-if="lastQuestion" class="btn next" @click="move(1)" >
+        Next question
+      </button>
+      <button v-else class="btn next" @click="goToResults" >
+        Finish
       </button>
     </div>
   </div>
-  <ResultsPage v-else/>
 </template>
 
 <script>
-import QuestionCard from '@/components/QuestionCard.vue'
-import ResultsPage from '@/components/ResultsPage.vue'
+import QuestionCard from '@/components/molecules/QuestionCard.vue'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'PersonalityTest',
   components: {
-    QuestionCard,
-    ResultsPage
+    QuestionCard
   },
   data () {
     return {
       active: 1,
-      slides: 4,
-      displayResult: false
+      slides: 4
     }
   },
   computed: {
@@ -57,15 +55,19 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['clearValues']),
     move (amount) {
       let newActive
       const newIndex = this.active + amount
       if (newIndex > this.slides) newActive = 1
-      if (this.active >= this.slides) this.displayResult = true
       this.active = newActive || newIndex
     },
     goBackHome () {
+      this.clearValues()
       this.$router.push('/')
+    },
+    goToResults () {
+      this.$router.push('/results')
     }
   }
 }

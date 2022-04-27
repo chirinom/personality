@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FormMultipleRadio from '@/components/forms/FormMultipleRadio.vue'
+import FormMultipleRadio from '@/components/atoms/FormMultipleRadio.vue'
 import { mapGetters, mapMutations } from 'vuex'
 export default {
   components: {
@@ -36,6 +36,5 @@ export default {
   &__label {
     text-align: left;
   }
-
 }
 </style>

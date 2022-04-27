@@ -36,6 +36,7 @@ export default {
 
   & .banner {
     width: 630px;
+    border-radius: 4px;
   }
 }
 .start-btn {
