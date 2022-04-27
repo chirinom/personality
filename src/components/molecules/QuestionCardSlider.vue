@@ -16,16 +16,30 @@
         </div>
       </transition-group>
       <div class="btns">
-        <button v-if="firstQuestion" class="btn back" @click="goBackHome">
+        <button
+          v-if="firstQuestion"
+          @click="goBackHome"
+          class="btn back"
+        >
           Go back Home
         </button>
         <button v-else class="btn prev" @click="prev">
           Previous
         </button>
-        <button  v-if="lastQuestion" class="btn next" @click="next" :disabled="!passed">
+        <button
+          v-if="lastQuestion"
+          :disabled="!passed"
+          @click="next"
+          class="btn next"
+        >
           Next question
         </button>
-        <button v-else class="btn finish" @click="goToResults" >
+        <button
+          v-else
+          :disabled="!passed"
+          @click="goToResults(), next()"
+          class="btn finish"
+        >
           Finish
         </button>
       </div>
@@ -72,9 +86,8 @@ export default {
     next () {
       let newActive
       const newIndex = this.active + 1
-      if (newIndex > this.slides) newActive = 1
-      if (this.answerValue != null) this.setValues(this.answerValue)
       this.active = newActive || newIndex
+      if (this.answerValue != null) this.setValues(this.answerValue)
       this.answerValue = null
     },
     goBackHome () {
@@ -113,6 +126,5 @@ export default {
       width: 100%;
     }
   }
-
 }
 </style>

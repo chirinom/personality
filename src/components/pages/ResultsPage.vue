@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="trait === 'intro'"  class="results">
+    <div v-if="trait" class="results">
       <h1>Congratulations! <br>You are an introvert :)</h1>
       <img :src="require('@/assets/images/intro.jpg')" alt="">
     </div>
@@ -17,7 +17,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      trait: ''
+      trait: null
     }
   },
   computed: {
@@ -27,7 +27,7 @@ export default {
     ...mapActions(['clearValues']),
     calculatePersonality () {
       const totalValue = this.values.reduce((a, b) => a + b)
-      this.trait = totalValue <= 7 ? 'intro' : 'extro'
+      this.trait = !(totalValue >= 7)
     },
     goBackHome () {
       this.clearValues()
@@ -35,7 +35,9 @@ export default {
     }
   },
   mounted () {
-    this.calculatePersonality()
+    if (this.values.length > 0) {
+      this.calculatePersonality()
+    }
   }
 }
 </script>
