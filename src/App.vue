@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <PersonalityTest/>
+    <!-- <PersonalityTest/> -->
+    <!-- <router-link to="/">Go to Home</router-link> -->
+  <!-- component matched by the route will render here -->
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-import PersonalityTest from './components/PersonalityTest.vue'
+// import PersonalityTest from './components/PersonalityTest.vue'
 
 export default {
   name: 'App',
   components: {
-    PersonalityTest
+    // PersonalityTest
   }
 }
 </script>

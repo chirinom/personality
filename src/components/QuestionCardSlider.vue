@@ -14,9 +14,11 @@
       </div>
     </transition-group>
     <div class="btns">
-      <button class="btn prev" @click="move(-1)">
-        <span  v-if="firstQuestion">Back home</span>
-        <span v-else>Previous</span>
+      <button  v-if="firstQuestion" class="btn prev" @click="goBackHome">
+        Go back Home
+      </button>
+      <button v-else class="btn prev" @click="move(-1)">
+        Previous
       </button>
       <button class="btn next" @click="move(1)" >
         <span v-if="lastQuestion">Next question</span>
@@ -59,9 +61,11 @@ export default {
       let newActive
       const newIndex = this.active + amount
       if (newIndex > this.slides) newActive = 1
-      // if (newIndex === 0) newActive = this.slides
       if (this.active >= this.slides) this.displayResult = true
       this.active = newActive || newIndex
+    },
+    goBackHome () {
+      this.$router.push('/')
     }
   }
 }
