@@ -14,7 +14,7 @@
       </div>
     </transition-group>
     <div class="btns">
-      <button  v-if="firstQuestion" class="btn prev" @click="goBackHome">
+      <button  v-if="firstQuestion" class="btn back" @click="goBackHome">
         Go back Home
       </button>
       <button v-else class="btn prev" @click="move(-1)">
@@ -23,7 +23,7 @@
       <button  v-if="lastQuestion" class="btn next" @click="move(1)" >
         Next question
       </button>
-      <button v-else class="btn next" @click="goToResults" >
+      <button v-else class="btn finish" @click="goToResults" >
         Finish
       </button>
     </div>
