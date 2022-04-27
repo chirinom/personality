@@ -2,7 +2,7 @@
   <div class="landing">
     <div class="header">
       <span>Are you an introvert <br> or an extrovert? </span>
-      <button class="header__start-btn" @click="startTest">Start test</button>
+      <button class="start-btn" @click="startTest">Start test</button>
     </div>
     <img class="banner" :src="require('@/assets/images/banner.jpg')" alt="">
   </div>
@@ -32,7 +32,7 @@ export default {
       padding: 30px 65px;
       line-height: 75px;
 
-    &__start-btn {
+    & .start-btn {
       width: 444px;
       padding: 11px 22px;
       margin: 77px 0;
@@ -53,6 +53,28 @@ export default {
     width: 630px;
     border-radius: 4px;
     height: fit-content;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .landing {
+    flex-direction: column-reverse;
+    padding: 33px 12px;
+    width: min-content;
+
+    & .header {
+      font-size: 37px;
+      text-align: center;
+      padding: 30px 0;
+      line-height: 58px;
+
+      & .start-btn {
+        margin: 22px 0;
+      }
+    }
+    & .banner {
+      width: 100%;
+    }
   }
 }
 

@@ -86,11 +86,12 @@ export default {
 .input-container {
   display: flex;
   align-items: center;
-  margin: 4px 0 0 0;
+  margin: 12px 0 0 0;
+  cursor: pointer;
 }
 input.radio {
   position: relative;
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   margin-right: 8px;
   border: 2px solid lightgray;
@@ -145,6 +146,15 @@ input.radio {
   color: lightgray;
 }
 .radio-text {
-  font-size: 14px;;
+  font-size: 14px;
+  margin: 4px 0 0 0;
+  &:hover {
+    color: rgb(73, 195, 235);
+  }
+}
+@media screen and (max-width: 580px) {
+  .input-container {
+    text-align: left;
+  }
 }
 </style>
