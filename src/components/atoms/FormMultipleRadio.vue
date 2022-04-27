@@ -50,8 +50,7 @@ export default {
       type: [Number, String, Boolean, Array]
     },
     rules: {
-      type: [Object, String],
-      default: ''
+      type: [Object, String]
     }
   },
   computed: {
