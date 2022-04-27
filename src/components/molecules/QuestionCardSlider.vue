@@ -1,5 +1,5 @@
 <template>
-  <div  class="wrapper">
+  <div class="wrapper">
     <transition-group class="transition">
       <div
         v-for="(question, index) in questions"

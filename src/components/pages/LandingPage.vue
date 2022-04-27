@@ -34,8 +34,8 @@ export default {
 
     &__start-btn {
       width: 444px;
-      padding: 8px 22px;
-      margin: 44px 0;
+      padding: 11px 22px;
+      margin: 77px 0;
       background-color: lightblue;
       font-weight: bold;
       cursor: pointer;
