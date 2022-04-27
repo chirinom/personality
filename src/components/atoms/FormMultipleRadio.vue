@@ -118,14 +118,17 @@ input.radio {
       color: #fff;
     }
   }
-}
 .input-label {
   cursor: pointer;
   &-disabled {
     color: lightgray;
   }
+  }
 }
 .form-description {
   color: lightgray;
+}
+.radio-text {
+  font-size: 14px;;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="question-card">
-    <h4 class="question-card__label">{{ question }}</h4>
+    <h4 class="label">{{ question }}</h4>
     <FormMultipleRadio :value="values" :options="answers" @input="setValues" class="radio"/>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .question-card {
-  &__label {
+  & .label {
     text-align: left;
   }
 }
